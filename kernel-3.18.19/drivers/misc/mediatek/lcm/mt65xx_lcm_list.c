@@ -23,6 +23,18 @@ LCM_DRIVER *lcm_driver_list[] = {
 #if defined(MTK_LCM_DEVICE_TREE_SUPPORT)
 	&lcm_common_drv,
 #else
+#if defined(ZAW806_NT35521S_HD720_DSI_VDO_TXDQC_TXDT500SYPA)
+	&zaw806_nt35521s_hd720_dsi_vdo_txdqc_TXDT500SYPA_lcm_drv,
+#endif
+#if defined(ZAW806_NT35521S_HD720_DSI_VDO_TXD_TXDT500SYPA)
+	&zaw806_nt35521s_hd720_dsi_vdo_txd_TXDT500SYPA_lcm_drv,
+#endif
+#if defined(ZAW806_ILI9881C_HD720_DSI_VDO_DIJING)
+	&zaw806_ili9881c_hd720_dsi_vdo_dijing_lcm_drv,
+#endif
+#if defined(ZAW806_OTM1287A_HD720_DSI_VDO)
+	&zaw806_otm1287a_hd720_dsi_vdo_lcm_drv,
+#endif
 #if defined(OTM1284A_HD720_DSI_VDO_TM)
 	&otm1284a_hd720_dsi_vdo_tm_lcm_drv,
 #endif

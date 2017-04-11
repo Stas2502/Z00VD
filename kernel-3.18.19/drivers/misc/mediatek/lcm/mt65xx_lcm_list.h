@@ -6,6 +6,10 @@
 #if defined(MTK_LCM_DEVICE_TREE_SUPPORT)
 extern LCM_DRIVER lcm_common_drv;
 #else
+extern LCM_DRIVER zaw806_nt35521s_hd720_dsi_vdo_txdqc_TXDT500SYPA_lcm_drv;
+extern LCM_DRIVER zaw806_nt35521s_hd720_dsi_vdo_txd_TXDT500SYPA_lcm_drv;
+extern LCM_DRIVER zaw806_ili9881c_hd720_dsi_vdo_dijing_lcm_drv;
+extern LCM_DRIVER zaw806_otm1287a_hd720_dsi_vdo_lcm_drv;
 extern LCM_DRIVER otm1282a_hd720_dsi_vdo_60hz_lcm_drv;
 extern LCM_DRIVER otm1282a_hd720_dsi_vdo_lcm_drv;
 extern LCM_DRIVER vvx10f008b00_wuxga_dsi_vdo_lcm_drv;
