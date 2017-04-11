@@ -1,0 +1,58 @@
+make[1]: вход в каталог «/home/nik-kst/Android/Z00VD_000/kernel-3.18.19/out»
+  CHK     include/config/kernel.release
+  Using .. as source for kernel
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+make[2]: «include/generated/mach-types.h» не требует обновления.
+  CALL    ../scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  SHIPPED arch/arm/crypto/aesbs-core.S
+  AS      arch/arm/crypto/aesbs-core.o
+  LD      arch/arm/crypto/aes-arm-bs.o
+  LD      arch/arm/crypto/built-in.o
+rm arch/arm/crypto/aesbs-core.S
+cameraisp drv by platform 
+*MTK_GPU_VERSION 1 = mali
+$CONFIG_MTK_GPU_COMMON_DVFS_SUPPORT is []
+*MTK_GPU_VERSION 2 = utgard
+-= project path  ../drivers/misc/mediatek/imgsensor/src/mt6580/camera_project/vz6580_we_i_m/ =-
+imgsensor drv by platform gc0310_yuv imx179_mipi_raw ov5670_mipi_raw
+imgsensor drv by project 
+  LINK    vmlinux
+  LD      vmlinux.o
+  MODPOST vmlinux.o
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  LD      init/built-in.o
+  KSYM    .tmp_kallsyms1.o
+  KSYM    .tmp_kallsyms2.o
+  LD      vmlinux
+  SORTEX  vmlinux
+  SYSMAP  System.map
+  DTC     arch/arm/boot/dts/vz6580_we_i_m.dtb
+  OBJCOPY arch/arm/boot/Image
+  Kernel: arch/arm/boot/Image is ready
+  LDS     arch/arm/boot/compressed/vmlinux.lds
+  AS      arch/arm/boot/compressed/head.o
+  GZIP    arch/arm/boot/compressed/piggy.gzip
+  AS      arch/arm/boot/compressed/piggy.gzip.o
+  CC      arch/arm/boot/compressed/misc.o
+  CC      arch/arm/boot/compressed/decompress.o
+  CC      arch/arm/boot/compressed/string.o
+  SHIPPED arch/arm/boot/compressed/hyp-stub.S
+  AS      arch/arm/boot/compressed/hyp-stub.o
+  SHIPPED arch/arm/boot/compressed/lib1funcs.S
+  AS      arch/arm/boot/compressed/lib1funcs.o
+  SHIPPED arch/arm/boot/compressed/ashldi3.S
+  AS      arch/arm/boot/compressed/ashldi3.o
+  SHIPPED arch/arm/boot/compressed/bswapsdi2.S
+  AS      arch/arm/boot/compressed/bswapsdi2.o
+  LD      arch/arm/boot/compressed/vmlinux
+  OBJCOPY arch/arm/boot/zImage
+  Kernel: arch/arm/boot/zImage is ready
+  CAT     arch/arm/boot/zImage-dtb
+  Kernel: arch/arm/boot/zImage-dtb is ready
+make[1]: выход из каталога «/home/nik-kst/Android/Z00VD_000/kernel-3.18.19/out»
