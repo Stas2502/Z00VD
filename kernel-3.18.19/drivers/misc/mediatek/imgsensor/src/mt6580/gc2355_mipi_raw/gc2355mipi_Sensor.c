@@ -140,7 +140,7 @@ static imgsensor_info_struct imgsensor_info = {
     .sensor_interface_type = SENSOR_INTERFACE_TYPE_MIPI,//sensor_interface_type
     .mipi_sensor_type = MIPI_OPHY_NCSI2, //0,MIPI_OPHY_NCSI2;  1,MIPI_OPHY_CSI2
     .mipi_settle_delay_mode = MIPI_SETTLEDELAY_AUTO,//0,MIPI_SETTLEDELAY_AUTO; 1,MIPI_SETTLEDELAY_MANNUAL
-    .sensor_output_dataformat = SENSOR_OUTPUT_FORMAT_RAW_B,//sensor output first pixel color
+    .sensor_output_dataformat = SENSOR_OUTPUT_FORMAT_RAW_R,//sensor output first pixel color
     .mclk = 24,//mclk value, suggest 24 or 26 for 24Mhz or 26Mhz
     .mipi_lane_num = SENSOR_MIPI_2_LANE,//mipi lane num
     .i2c_addr_table = {0x78, 0xff},//record sensor support all write id addr, only supprt 4must end with 0xff
@@ -196,7 +196,7 @@ static void write_cmos_sensor(kal_uint32 addr, kal_uint32 para)
 
 }
 
-static void set_dummy()
+static void set_dummy(void)
 {
  	kal_uint32 hb = 0;
 	kal_uint32 vb = 0;
@@ -217,7 +217,7 @@ static void set_dummy()
 //  end
 }    /*    set_dummy  */
 
-static kal_uint32 return_sensor_id()
+static kal_uint32 return_sensor_id(void)
 {
     return ((read_cmos_sensor(0xf0) << 8) | read_cmos_sensor(0xf1));
 }
@@ -530,11 +530,11 @@ static void sensor_init(void)
 	write_cmos_sensor(0x17,0x17);//14
 	//write_cmos_sensor(0x18,0x02);
 	write_cmos_sensor(0x19,0x0b);
-	write_cmos_sensor(0x1b,0x49); //48
+	write_cmos_sensor(0x1b,0x48);
 	write_cmos_sensor(0x1c,0x12);
 	write_cmos_sensor(0x1d,0x10); //double reset
 	write_cmos_sensor(0x1e,0xbc); //a8//col_r/rowclk_mode/rsthigh_en FPN
-	write_cmos_sensor(0x1f,0xc8); //c8//rsgl_s_mode/vpix_s_mode ƹܺ
+	write_cmos_sensor(0x1f,0xc9);
 	write_cmos_sensor(0x20,0x71);
 	write_cmos_sensor(0x21,0x20); //rsg ƹܺ   //////40
 	write_cmos_sensor(0x22,0xa0); //e0   //80  //f0
@@ -546,7 +546,7 @@ static void sensor_init(void)
 	write_cmos_sensor(0x28,0x00);//10
 	//write_cmos_sensor(0x29,0x00);
 	//write_cmos_sensor(0x2a,0x00);
-	write_cmos_sensor(0x2b,0x81); //00 sf_s_mode FPN
+	write_cmos_sensor(0x2b,0x80);// 0x81 20140926
 	write_cmos_sensor(0x2c,0x38); //50 //5c ispg FPN
 	//write_cmos_sensor(0x2d,0x15);
 	write_cmos_sensor(0x2e,0x16); //05//eq width
@@ -558,8 +558,34 @@ static void sensor_init(void)
 	write_cmos_sensor(0x34,0x07);
 	write_cmos_sensor(0x35,0x0b);
 	write_cmos_sensor(0x36,0x0f);
+	write_cmos_sensor(0xfe, 0x03);
+	write_cmos_sensor(0x01, 0x87);
+	write_cmos_sensor(0x22, 0x03);  
+	write_cmos_sensor(0x23, 0x20);
+	write_cmos_sensor(0x25, 0x10);
+	write_cmos_sensor(0x29, 0x02);
+	write_cmos_sensor(0x02, 0x11); // 00 20150522
+	write_cmos_sensor(0x03, 0x91); // 90 tarvis 20150611
+	write_cmos_sensor(0x04, 0x01);
+	write_cmos_sensor(0x05, 0x00);
+	write_cmos_sensor(0x06, 0xa2);
+	write_cmos_sensor(0x11, 0x2b);
+	write_cmos_sensor(0x12, 0xd0); 
+	write_cmos_sensor(0x13, 0x07); 
+	write_cmos_sensor(0x15, 0x60);
 
+	write_cmos_sensor(0x21, 0x10);
+	write_cmos_sensor(0x24, 0x02);
+	write_cmos_sensor(0x26, 0x08);
+	write_cmos_sensor(0x27, 0x06);
+	write_cmos_sensor(0x2a, 0x0a); 
+	write_cmos_sensor(0x2b, 0x08);
 	/* gain */
+	write_cmos_sensor(0x40, 0x00);
+	write_cmos_sensor(0x41, 0x00);    
+	write_cmos_sensor(0x42, 0x40);
+	write_cmos_sensor(0x43, 0x06);  
+	write_cmos_sensor(0xfe, 0x00);
 	write_cmos_sensor(0xb0,0x50);
 	write_cmos_sensor(0xb1,0x01);
 	write_cmos_sensor(0xb2,0x00);
@@ -601,32 +627,8 @@ static void sensor_init(void)
 	/*MIPI*/
 	  write_cmos_sensor(0xfe, 0x03);
 	  write_cmos_sensor(0x10, 0x81);
-	  write_cmos_sensor(0x01, 0x87);
-	  write_cmos_sensor(0x02, 0x11);
-	  write_cmos_sensor(0x03, 0x91);
-	  write_cmos_sensor(0x04, 0x01);
-	  write_cmos_sensor(0x05, 0x00);
-	  write_cmos_sensor(0x06, 0xa2);
 
-	  write_cmos_sensor(0x11, 0x2b);//2b
-	  write_cmos_sensor(0x15, 0x60);
-	  write_cmos_sensor(0x12, 0xd0); //d0//40
-	  write_cmos_sensor(0x13, 0x07); //07//06
-	  write_cmos_sensor(0x21, 0x10);
-	  write_cmos_sensor(0x22, 0x03);
-	  write_cmos_sensor(0x23, 0x20);
-	  write_cmos_sensor(0x24, 0x02);
-	  write_cmos_sensor(0x25, 0x10);
-	  write_cmos_sensor(0x26, 0x08);
 	//  write_cmos_sensor(0x27, 0x06);
-	  write_cmos_sensor(0x29, 0x02);//04
-	  write_cmos_sensor(0x2a, 0x0a);
-	  write_cmos_sensor(0x2b, 0x08);
-	  write_cmos_sensor(0x10, 0x81);//91//94//1lane raw8
-	  write_cmos_sensor(0x40, 0x00);
-	  write_cmos_sensor(0x41, 0x00);
-	  write_cmos_sensor(0x42, 0x40);
-	  write_cmos_sensor(0x43, 0x06);
 	  write_cmos_sensor(0xfe, 0x00);
 
 }    /*    sensor_init  */
@@ -779,7 +781,7 @@ static void normal_video_setting(kal_uint16 currefps)
 
 }
 
-static void hs_video_setting()
+static void hs_video_setting(void)
 {
     LOG_INF("E\n");
 
@@ -816,7 +818,7 @@ static void hs_video_setting()
 
 }
 
-static void slim_video_setting()
+static void slim_video_setting(void)
 {
     LOG_INF("E\n");
 
@@ -948,6 +950,7 @@ static kal_uint32 open(void)
         do {
             sensor_id = return_sensor_id();
             if (sensor_id == imgsensor_info.sensor_id) {
+		printk("this is gc2355_qunhui module\n");
                 LOG_INF("i2c write id: 0x%x, sensor id: 0x%x\n", imgsensor.i2c_write_id,sensor_id);
                 break;
             }
@@ -1043,6 +1046,7 @@ static kal_uint32 preview(MSDK_SENSOR_EXPOSURE_WINDOW_STRUCT *image_window,
     imgsensor.autoflicker_en = KAL_FALSE;
     spin_unlock(&imgsensor_drv_lock);
     preview_setting();
+	set_mirror_flip(imgsensor.mirror);
 	//set_mirror_flip(sensor_config_data->SensorImageMirror);
     return ERROR_NONE;
 }    /*    preview   */
@@ -1086,6 +1090,7 @@ static kal_uint32 capture(MSDK_SENSOR_EXPOSURE_WINDOW_STRUCT *image_window,
     }
     spin_unlock(&imgsensor_drv_lock);
     capture_setting(imgsensor.current_fps);
+	set_mirror_flip(imgsensor.mirror);
 	//set_mirror_flip(sensor_config_data->SensorImageMirror);
     return ERROR_NONE;
 }    /* capture() */
@@ -1104,6 +1109,7 @@ static kal_uint32 normal_video(MSDK_SENSOR_EXPOSURE_WINDOW_STRUCT *image_window,
     imgsensor.autoflicker_en = KAL_FALSE;
     spin_unlock(&imgsensor_drv_lock);
     normal_video_setting(imgsensor.current_fps);
+	set_mirror_flip(imgsensor.mirror);
 	//set_mirror_flip(sensor_config_data->SensorImageMirror);
     return ERROR_NONE;
 }    /*    normal_video   */
@@ -1125,6 +1131,7 @@ static kal_uint32 hs_video(MSDK_SENSOR_EXPOSURE_WINDOW_STRUCT *image_window,
     imgsensor.autoflicker_en = KAL_FALSE;
     spin_unlock(&imgsensor_drv_lock);
     hs_video_setting();
+	set_mirror_flip(imgsensor.mirror);
 	//set_mirror_flip(sensor_config_data->SensorImageMirror);
     return ERROR_NONE;
 }    /*    hs_video   */
@@ -1145,6 +1152,7 @@ static kal_uint32 slim_video(MSDK_SENSOR_EXPOSURE_WINDOW_STRUCT *image_window,
     imgsensor.autoflicker_en = KAL_FALSE;
     spin_unlock(&imgsensor_drv_lock);
     slim_video_setting();
+	set_mirror_flip(imgsensor.mirror);
 	//set_mirror_flip(sensor_config_data->SensorImageMirror);
 
     return ERROR_NONE;
