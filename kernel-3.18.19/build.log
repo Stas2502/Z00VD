@@ -1,8 +1,10 @@
 make[1]: вход в каталог «/home/nik-kst/Android/Z00VD/kernel-3.18.19/out»
+  GEN     ./Makefile
+scripts/kconfig/conf --silentoldconfig Kconfig
   CHK     include/config/kernel.release
-  Using .. as source for kernel
   GEN     ./Makefile
   CHK     include/generated/uapi/linux/version.h
+  Using .. as source for kernel
   CHK     include/generated/utsrelease.h
 make[2]: «include/generated/mach-types.h» не требует обновления.
   CALL    ../scripts/checksyscalls.sh
@@ -12,6 +14,7 @@ make[2]: «include/generated/mach-types.h» не требует обновлен
   LD      arch/arm/crypto/aes-arm-bs.o
   LD      arch/arm/crypto/built-in.o
 rm arch/arm/crypto/aesbs-core.S
+  DTC     arch/arm/boot/dts/vz6580_we_i_m.dtb
 cameraisp drv by platform 
 *MTK_GPU_VERSION 1 = mali
 $CONFIG_MTK_GPU_COMMON_DVFS_SUPPORT is []
@@ -19,278 +22,6 @@ $CONFIG_MTK_GPU_COMMON_DVFS_SUPPORT is []
 -= project path  ../drivers/misc/mediatek/imgsensor/src/mt6580/camera_project/vz6580_we_i_m/ =-
 imgsensor drv by platform ov8858_mipi_raw s5k4h5yc_mipi_raw gc2355_mipi_raw ov2680_mipi_raw
 imgsensor drv by project 
-  CC      drivers/misc/mediatek/imgsensor/src/mt6580/gc2355_mipi_raw/gc2355mipi_Sensor.o
-  LD      drivers/misc/mediatek/imgsensor/src/mt6580/gc2355_mipi_raw/built-in.o
-  CC      drivers/misc/mediatek/imgsensor/src/mt6580/ov2680_mipi_raw/ov2680mipi_Sensor.o
-  LD      drivers/misc/mediatek/imgsensor/src/mt6580/ov2680_mipi_raw/built-in.o
-  CC      drivers/misc/mediatek/imgsensor/src/mt6580/ov8858_mipi_raw/ov8858mipiraw_Sensor.o
-  LD      drivers/misc/mediatek/imgsensor/src/mt6580/ov8858_mipi_raw/built-in.o
-  CC      drivers/misc/mediatek/imgsensor/src/mt6580/s5k4h5yc_mipi_raw/s5k4h5ycmipiraw_Sensor.o
-  LD      drivers/misc/mediatek/imgsensor/src/mt6580/s5k4h5yc_mipi_raw/built-in.o
-  LD      drivers/misc/mediatek/imgsensor/src/mt6580/built-in.o
-  LD      drivers/misc/mediatek/imgsensor/src/built-in.o
-  CC      drivers/misc/mediatek/irq/mt6580/irq.o
-  LD      drivers/misc/mediatek/irq/mt6580/built-in.o
-  LD      drivers/misc/mediatek/irq/built-in.o
-  LD      drivers/misc/mediatek/irtx/built-in.o
-  CC      drivers/misc/mediatek/lcm/mt65xx_lcm_list.o
-  CC      drivers/misc/mediatek/lcm/lcm_common.o
-  CC      drivers/misc/mediatek/lcm/lcm_gpio.o
-  CC      drivers/misc/mediatek/lcm/lcm_i2c.o
-  CC      drivers/misc/mediatek/lcm/lcm_pmic.o
-  CC      drivers/misc/mediatek/lcm/lcm_util.o
-  CC      drivers/misc/mediatek/lcm/zaw806_ili9881c_hd720_dsi_vdo_dijing/zaw806_ili9881c_hd720_dsi_vdo_dijing.o
-  LD      drivers/misc/mediatek/lcm/zaw806_ili9881c_hd720_dsi_vdo_dijing/built-in.o
-  CC      drivers/misc/mediatek/lcm/zaw806_nt35521s_hd720_dsi_vdo_txd_TXDT500SYPA/zaw806_nt35521s_hd720_dsi_vdo_txd_TXDT500SYPA.o
-  LD      drivers/misc/mediatek/lcm/zaw806_nt35521s_hd720_dsi_vdo_txd_TXDT500SYPA/built-in.o
-  CC      drivers/misc/mediatek/lcm/zaw806_nt35521s_hd720_dsi_vdo_txdqc_TXDT500SYPA/zaw806_nt35521s_hd720_dsi_vdo_txdqc_TXDT500SYPA.o
-  LD      drivers/misc/mediatek/lcm/zaw806_nt35521s_hd720_dsi_vdo_txdqc_TXDT500SYPA/built-in.o
-  CC      drivers/misc/mediatek/lcm/zaw806_otm1287a_hd720_dsi_vdo/zaw806_otm1287a_hd720_dsi_vdo.o
-  LD      drivers/misc/mediatek/lcm/zaw806_otm1287a_hd720_dsi_vdo/built-in.o
-  LD      drivers/misc/mediatek/lcm/built-in.o
-  CC      drivers/misc/mediatek/leds/leds_drv.o
-  CC      drivers/misc/mediatek/leds/mt6580/leds.o
-  LD      drivers/misc/mediatek/leds/mt6580/built-in.o
-  LD      drivers/misc/mediatek/leds/built-in.o
-  CC      drivers/misc/mediatek/lens/main_lens.o
-  CC      drivers/misc/mediatek/lens/sub_lens.o
-  CC      drivers/misc/mediatek/lens/common/ad5820af/AD5820AF.o
-  LD      drivers/misc/mediatek/lens/common/ad5820af/built-in.o
-  CC      drivers/misc/mediatek/lens/common/dw9714af/DW9714AF.o
-  LD      drivers/misc/mediatek/lens/common/dw9714af/built-in.o
-  CC      drivers/misc/mediatek/lens/common/lc898212af/LC898212AF.o
-  LD      drivers/misc/mediatek/lens/common/lc898212af/built-in.o
-  LD      drivers/misc/mediatek/lens/built-in.o
-  CC      drivers/misc/mediatek/m4u/2.0/m4u.o
-  CC      drivers/misc/mediatek/m4u/2.0/m4u_mva.o
-  CC      drivers/misc/mediatek/m4u/2.0/m4u_pgtable.o
-  CC      drivers/misc/mediatek/m4u/2.0/m4u_debug.o
-  LD      drivers/misc/mediatek/m4u/2.0/built-in.o
-  CC      drivers/misc/mediatek/m4u/mt6580/m4u_hw.o
-  LD      drivers/misc/mediatek/m4u/mt6580/built-in.o
-  LD      drivers/misc/mediatek/m4u/built-in.o
-  CC      drivers/misc/mediatek/mach/mt6580/mt_gpt.o
-  CC      drivers/misc/mediatek/mach/mt6580/ca7_timer.o
-  CC      drivers/misc/mediatek/mach/mt6580/mtk_ccci_helper.o
-  CC      drivers/misc/mediatek/mach/mt6580/cpu_hibernate.o
-  LD      drivers/misc/mediatek/mach/mt6580/built-in.o
-  LD      drivers/misc/mediatek/mach/built-in.o
-  CC      drivers/misc/mediatek/magnetometer/mag.o
-  CC      drivers/misc/mediatek/magnetometer/mag_factory.o
-  CC      drivers/misc/mediatek/magnetometer/akm09911-new/akm09911.o
-  LD      drivers/misc/mediatek/magnetometer/akm09911-new/built-in.o
-  LD      drivers/misc/mediatek/magnetometer/built-in.o
-  CC      drivers/misc/mediatek/masp/asfv2/core/sec_ccci.o
-  CC      drivers/misc/mediatek/masp/asfv2/core/sec_boot_core.o
-  CC      drivers/misc/mediatek/masp/asfv2/core/sec_mod_core.o
-  CC      drivers/misc/mediatek/masp/asfv2/core/sec_osal.o
-  CC      drivers/misc/mediatek/masp/asfv2/core/sec_legacy.o
-  CC      drivers/misc/mediatek/masp/asfv2/module/sec_mod.o
-  CC      drivers/misc/mediatek/masp/asfv2/mach/sec_lib.o
-  CC      drivers/misc/mediatek/masp/asfv2/mach/hacc_lib.o
-  CC      drivers/misc/mediatek/masp/asfv2/mach/hacc_export.o
-  CC      drivers/misc/mediatek/masp/asfv2/mach/hacc_hk.o
-  CC      drivers/misc/mediatek/masp/asfv2/mach/hacc_sk.o
-  LD      drivers/misc/mediatek/masp/sec.o
-  LD      drivers/misc/mediatek/masp/built-in.o
-  CC      drivers/misc/mediatek/mem/mtk_meminfo.o
-  LD      drivers/misc/mediatek/mem/built-in.o
-  CC      drivers/misc/mediatek/mlog/mlog_dump.o
-  CC      drivers/misc/mediatek/mlog/mlog_logger.o
-  LD      drivers/misc/mediatek/mlog/mlog.o
-  LD      drivers/misc/mediatek/mlog/built-in.o
-  CC      drivers/misc/mediatek/mmp/src/mmprofile.o
-  LD      drivers/misc/mediatek/mmp/src/built-in.o
-  LD      drivers/misc/mediatek/mmp/built-in.o
-  CC      drivers/misc/mediatek/mtprof/prof_ctl.o
-  CC      drivers/misc/mediatek/mtprof/prof_main.o
-  CC      drivers/misc/mediatek/mtprof/common.o
-  LD      drivers/misc/mediatek/mtprof/mtprof.o
-  CC      drivers/misc/mediatek/mtprof/bootprof.o
-  CC      drivers/misc/mediatek/mtprof/sched_monitor.o
-  CC      drivers/misc/mediatek/mtprof/monitor_debug_out.o
-  CC      drivers/misc/mediatek/mtprof/mt_printk_ctrl.o
-  LD      drivers/misc/mediatek/mtprof/built-in.o
-  CC      drivers/misc/mediatek/partition/partition.o
-  LD      drivers/misc/mediatek/partition/built-in.o
-  LD      drivers/misc/mediatek/performance/fliper/built-in.o
-  CC      drivers/misc/mediatek/performance/perfmgr/perfmgr_main.o
-  LD      drivers/misc/mediatek/performance/perfmgr/built-in.o
-  LD      drivers/misc/mediatek/performance/built-in.o
-  CC      drivers/misc/mediatek/pmic_wrap/mt_pmic_wrap.o
-  CC      drivers/misc/mediatek/pmic_wrap/mt6580/pwrap_hal.o
-  LD      drivers/misc/mediatek/pmic_wrap/mt6580/built-in.o
-  LD      drivers/misc/mediatek/pmic_wrap/built-in.o
-  CC      drivers/misc/mediatek/power/mt6580/pmic.o
-  CC      drivers/misc/mediatek/power/mt6580/upmu_common.o
-  CC      drivers/misc/mediatek/power/mt6580/pmic_auxadc.o
-  CC      drivers/misc/mediatek/power/mt6580/pmic_chr_type_det.o
-  CC      drivers/misc/mediatek/power/mt6580/battery_meter_hal.o
-  CC      drivers/misc/mediatek/power/mt6580/fan5405.o
-  CC      drivers/misc/mediatek/power/mt6580/charging_hw_fan5405.o
-  LD      drivers/misc/mediatek/power/mt6580/built-in.o
-  LD      drivers/misc/mediatek/power/built-in.o
-  CC      drivers/misc/mediatek/power_gs/mt6580/mt_power_gs_6325_array.o
-  LD      drivers/misc/mediatek/power_gs/mt6580/built-in.o
-  CC      drivers/misc/mediatek/power_gs/mt_power_gs-v1.o
-  LD      drivers/misc/mediatek/power_gs/built-in.o
-  CC      drivers/misc/mediatek/pwm/mt_pwm.o
-  CC      drivers/misc/mediatek/pwm/mt6580/mt_pwm_hal.o
-  LD      drivers/misc/mediatek/pwm/mt6580/built-in.o
-  LD      drivers/misc/mediatek/pwm/built-in.o
-  CC      drivers/misc/mediatek/ram_console/mtk_ram_console.o
-  LD      drivers/misc/mediatek/ram_console/built-in.o
-  CC      drivers/misc/mediatek/rtc/mtk_rtc_common.o
-  CC      drivers/misc/mediatek/rtc/mtk_rtc_hal_common.o
-  CC      drivers/misc/mediatek/rtc/mt6350/mtk_rtc_hal.o
-  LD      drivers/misc/mediatek/rtc/mt6350/built-in.o
-  LD      drivers/misc/mediatek/rtc/built-in.o
-  CC      drivers/misc/mediatek/sched/rq_stats.o
-  CC      drivers/misc/mediatek/sched/sched_avg.o
-  CC      drivers/misc/mediatek/sched/mt_cpu_affinity/mt_sched.o
-  CC      drivers/misc/mediatek/sched/mt_cpu_affinity/mt_compat_sched.o
-  LD      drivers/misc/mediatek/sched/mt_cpu_affinity/built-in.o
-  CC      drivers/misc/mediatek/sched/cputopo.o
-  LD      drivers/misc/mediatek/sched/built-in.o
-  CC      drivers/misc/mediatek/selinux_warning/selinux_warning.o
-  LD      drivers/misc/mediatek/selinux_warning/built-in.o
-  CC      drivers/misc/mediatek/smi/smi_common.o
-  CC      drivers/misc/mediatek/smi/smi_debug.o
-  CC      drivers/misc/mediatek/smi/smi_info_util.o
-  CC      drivers/misc/mediatek/smi/smi_config_util.o
-  CC      drivers/misc/mediatek/smi/smi_configuration.o
-  CC      drivers/misc/mediatek/smi/smi_internal.o
-  LD      drivers/misc/mediatek/smi/built-in.o
-  CC      drivers/misc/mediatek/sync/mtk_sync.o
-  LD      drivers/misc/mediatek/sync/built-in.o
-  CC      drivers/misc/mediatek/sysenv/sysenv.o
-  LD      drivers/misc/mediatek/sysenv/built-in.o
-  CC      drivers/misc/mediatek/systracker/systracker_interface_v2.o
-  CC      drivers/misc/mediatek/systracker/mt6580/systracker_platform.o
-  LD      drivers/misc/mediatek/systracker/mt6580/built-in.o
-  CC      drivers/misc/mediatek/systracker/backtrace32.o
-  AS      drivers/misc/mediatek/systracker/backtrace32_asm.o
-  LD      drivers/misc/mediatek/systracker/built-in.o
-  CC      drivers/misc/mediatek/thermal/mtk_thermal_monitor.o
-  CC      drivers/misc/mediatek/thermal/mtk_cooler_shutdown.o
-  CC      drivers/misc/mediatek/thermal/mtk_cooler_backlight.o
-  CC      drivers/misc/mediatek/thermal/mtk_cooler_kshutdown.o
-  CC      drivers/misc/mediatek/thermal/mtk_cooler_cam.o
-  CC      drivers/misc/mediatek/thermal/mtk_cooler_vrt.o
-  CC      drivers/misc/mediatek/thermal/common/mtk_thermal_platform.o
-  CC      drivers/misc/mediatek/thermal/common/coolers/mtk_cooler_3Gmutt.o
-  CC      drivers/misc/mediatek/thermal/common/coolers/mtk_cooler_bcct.o
-  CC      drivers/misc/mediatek/thermal/common/coolers/mtk_cooler_atm.o
-  CC      drivers/misc/mediatek/thermal/common/coolers/mtk_cooler_dtm.o
-  CC      drivers/misc/mediatek/thermal/common/coolers/mtk_cooler_sysrst.o
-  CC      drivers/misc/mediatek/thermal/common/coolers/mtk_ta.o
-  LD      drivers/misc/mediatek/thermal/common/coolers/built-in.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_battery.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_bts.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_cpu.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_pa.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_pa_thput.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_pmic.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts_wmt.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts1.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts2.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts3.o
-  CC      drivers/misc/mediatek/thermal/common/thermal_zones/mtk_ts4.o
-  LD      drivers/misc/mediatek/thermal/common/thermal_zones/built-in.o
-  LD      drivers/misc/mediatek/thermal/common/built-in.o
-  CC      drivers/misc/mediatek/thermal/mt6580/src/mtk_tc.o
-  CC      drivers/misc/mediatek/thermal/mt6580/src/mtk_pmic_efuse.o
-  LD      drivers/misc/mediatek/thermal/mt6580/src/built-in.o
-  LD      drivers/misc/mediatek/thermal/mt6580/built-in.o
-  LD      drivers/misc/mediatek/thermal/built-in.o
-  CC      drivers/misc/mediatek/uart/uart.o
-  CC      drivers/misc/mediatek/uart/mt6580/platform_uart.o
-  LD      drivers/misc/mediatek/uart/mt6580/built-in.o
-  LD      drivers/misc/mediatek/uart/built-in.o
-  CC      drivers/misc/mediatek/usb20/mt6580/usb20.o
-  CC      drivers/misc/mediatek/usb20/mt6580/usb20_phy.o
-  CC      drivers/misc/mediatek/usb20/mt6580/usb20_host.o
-  LD      drivers/misc/mediatek/usb20/mt6580/built-in.o
-  CC      drivers/misc/mediatek/usb20/musb_core.o
-  CC      drivers/misc/mediatek/usb20/musb_gadget_ep0.o
-  CC      drivers/misc/mediatek/usb20/musb_gadget.o
-  CC      drivers/misc/mediatek/usb20/musb_virthub.o
-  CC      drivers/misc/mediatek/usb20/musb_host.o
-  CC      drivers/misc/mediatek/usb20/musbhsdma.o
-  CC      drivers/misc/mediatek/usb20/musb_debugfs.o
-  LD      drivers/misc/mediatek/usb20/musb_hdrc.o
-  LD      drivers/misc/mediatek/usb20/built-in.o
-  CC      drivers/misc/mediatek/vibrator/vibrator_drv.o
-  CC      drivers/misc/mediatek/vibrator/mt6580/vibrator.o
-  LD      drivers/misc/mediatek/vibrator/mt6580/built-in.o
-  LD      drivers/misc/mediatek/vibrator/built-in.o
-  CC      drivers/misc/mediatek/video/common/data_rgb888_64x64.o
-  CC      drivers/misc/mediatek/video/common/data_rgb888_64x64_golden.o
-  CC      drivers/misc/mediatek/video/common/mtkfb_fence.o
-  CC      drivers/misc/mediatek/video/common/fbconfig_kdebug.o
-  CC      drivers/misc/mediatek/video/common/mtkfb.o
-  CC      drivers/misc/mediatek/video/common/aal20/ddp_aal.o
-  CC      drivers/misc/mediatek/video/common/aal20/ddp_pwm.o
-  LD      drivers/misc/mediatek/video/common/aal20/built-in.o
-  CC      drivers/misc/mediatek/video/common/color20/ddp_color.o
-  LD      drivers/misc/mediatek/video/common/color20/built-in.o
-  CC      drivers/misc/mediatek/video/common/corr10/ddp_dither.o
-  CC      drivers/misc/mediatek/video/common/corr10/ddp_gamma.o
-  LD      drivers/misc/mediatek/video/common/corr10/built-in.o
-  CC      drivers/misc/mediatek/video/common/rdma10/ddp_rdma.o
-  LD      drivers/misc/mediatek/video/common/rdma10/built-in.o
-  CC      drivers/misc/mediatek/video/common/wdma10/ddp_wdma.o
-  LD      drivers/misc/mediatek/video/common/wdma10/built-in.o
-  LD      drivers/misc/mediatek/video/common/built-in.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_ovl.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_rdma_ex.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_wdma_ex.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_dsi.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_drv.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_path.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_debug.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_dump.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_manager.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_irq.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_info.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_pwm_mux.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_color_format.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_mmp.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_met.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/ddp_misc.o
-  CC      drivers/misc/mediatek/video/mt6580/dispsys/display_recorder.o
-  LD      drivers/misc/mediatek/video/mt6580/dispsys/built-in.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/mtkfb_console.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/disp_assert_layer.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/debug.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/primary_display.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/disp_lcm.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/disp_utils.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/mtk_disp_mgr.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/mtk_mira.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/mtk_ovl.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/disp_dts_gpio.o
-  CC      drivers/misc/mediatek/video/mt6580/videox/disp_helper.o
-  LD      drivers/misc/mediatek/video/mt6580/videox/built-in.o
-  LD      drivers/misc/mediatek/video/mt6580/built-in.o
-  LD      drivers/misc/mediatek/video/built-in.o
-  CC      drivers/misc/mediatek/videocodec/videocodec_kernel.o
-  CC      drivers/misc/mediatek/videocodec/mt6580/videocodec_kernel_driver.o
-  CC      drivers/misc/mediatek/videocodec/mt6580/common/val/src/val.o
-  CC      drivers/misc/mediatek/videocodec/mt6580/common/drv/src/drv_base.o
-  LD      drivers/misc/mediatek/videocodec/mt6580/vcodec_kernel_driver.o
-  LD      drivers/misc/mediatek/videocodec/mt6580/built-in.o
-  LD      drivers/misc/mediatek/videocodec/built-in.o
-  CC      drivers/misc/mediatek/watchpoint/mt6580/aarch32/hw_watchpoint_aarch32.o
-  CC      drivers/misc/mediatek/watchpoint/mt6580/aarch32/mt_dbg_aarch32.o
-  LD      drivers/misc/mediatek/watchpoint/mt6580/aarch32/built-in.o
-  LD      drivers/misc/mediatek/watchpoint/mt6580/built-in.o
-  LD      drivers/misc/mediatek/watchpoint/built-in.o
-  CC      drivers/misc/mediatek/xlog/xlog_filter.o
-  LD      drivers/misc/mediatek/xlog/built-in.o
-  LD      drivers/misc/mediatek/built-in.o
-  LD      drivers/misc/built-in.o
-  LD      drivers/built-in.o
   LINK    vmlinux
   LD      vmlinux.o
   MODPOST vmlinux.o
@@ -306,21 +37,8 @@ imgsensor drv by project
   SYSMAP  System.map
   OBJCOPY arch/arm/boot/Image
   Kernel: arch/arm/boot/Image is ready
-  LDS     arch/arm/boot/compressed/vmlinux.lds
-  AS      arch/arm/boot/compressed/head.o
   GZIP    arch/arm/boot/compressed/piggy.gzip
   AS      arch/arm/boot/compressed/piggy.gzip.o
-  CC      arch/arm/boot/compressed/misc.o
-  CC      arch/arm/boot/compressed/decompress.o
-  CC      arch/arm/boot/compressed/string.o
-  SHIPPED arch/arm/boot/compressed/hyp-stub.S
-  AS      arch/arm/boot/compressed/hyp-stub.o
-  SHIPPED arch/arm/boot/compressed/lib1funcs.S
-  AS      arch/arm/boot/compressed/lib1funcs.o
-  SHIPPED arch/arm/boot/compressed/ashldi3.S
-  AS      arch/arm/boot/compressed/ashldi3.o
-  SHIPPED arch/arm/boot/compressed/bswapsdi2.S
-  AS      arch/arm/boot/compressed/bswapsdi2.o
   LD      arch/arm/boot/compressed/vmlinux
   OBJCOPY arch/arm/boot/zImage
   Kernel: arch/arm/boot/zImage is ready
